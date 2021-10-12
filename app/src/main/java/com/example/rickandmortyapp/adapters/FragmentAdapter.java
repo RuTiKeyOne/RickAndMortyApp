@@ -9,7 +9,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.rickandmortyapp.fragments.Characters;
 import com.example.rickandmortyapp.fragments.Episodes;
 import com.example.rickandmortyapp.fragments.Locations;
-import com.example.rickandmortyapp.models.MainViewModel;
+import com.example.rickandmortyapp.viewmodels.MainViewModel;
 
 public class FragmentAdapter extends FragmentStateAdapter {
 
@@ -21,9 +21,9 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch(position) {
-            case 1:
+            case MainViewModel.LOCATION_FRAGMENT_KEY:
                 return new Locations();
-            case 2:
+            case MainViewModel.EPISODES_FRAGMENT_KEY:
                 return new Episodes();
         }
 
@@ -32,6 +32,6 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return MainViewModel.getTabLayoutsCount();
+        return MainViewModel.TAB_LAYOUTS_COUNT;
     }
 }

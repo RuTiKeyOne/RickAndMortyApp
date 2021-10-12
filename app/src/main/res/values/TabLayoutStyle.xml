@@ -4,5 +4,6 @@
         <item name="fontFamily">@font/ubuntumedium</item>
         <item name="tabTextColor">@color/colorGrayLight</item>
         <item name="tabIndicatorColor">@color/colorGrayLight</item>
+        <item name="tabRippleColor">@color/colorBlueLight</item>
     </style>
 </resources>
