@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TabLayoutCustom">
+        <item name="fontFamily">@font/ubuntumedium</item>
+        <item name="tabTextColor">@color/colorGrayLight</item>
+        <item name="tabIndicatorColor">@color/colorGrayLight</item>
+    </style>
+</resources>

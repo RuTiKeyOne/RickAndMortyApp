@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/characters_fragment.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_characters.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_episodes.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_locations.xml" value="0.17300724637681159" />
       </map>
     </option>
   </component>

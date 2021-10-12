@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Рик и Морти</string>
+    <string name="characters">Персонажи</string>
+    <string name="episodes">Эпизоды</string>
+    <string name="locations">Локации</string>
+</resources>
