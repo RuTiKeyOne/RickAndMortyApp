@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -13,56 +14,91 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/_4sdp">
 
-        <LinearLayout
+        <View
+            android:id="@+id/viewSupporter"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
-            android:background="@color/colorGray"
-            android:orientation="horizontal">
+            android:layout_height="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/imageCharacter" />
 
-            <ImageView
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/background_character"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textName"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
                 android:layout_width="@dimen/_72sdp"
-                android:layout_height="@dimen/_84sdp"
+                android:layout_height="@dimen/_100sdp"
                 android:imageURL="@{character.imageUrl}"
                 android:scaleType="centerCrop"
-                android:id="@+id/imageTvShow"/>
-
-            <LinearLayout
-                android:id="@+id/dataLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{character.name}"
-                    />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{character.status}"
-                    />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{character.species}"
-                    />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{character.gender}"
-                    />
+                android:id="@+id/imageCharacter"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBaseline_toTopOf="parent"
+                app:riv_corner_radius="@dimen/_4sdp"
+                />
 
 
-            </LinearLayout>
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:text="@{character.name}"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:fontFamily="@font/segou_ui_bold"
+            android:textAllCaps="true"
+            android:includeFontPadding="false"
+            android:paddingTop="@dimen/_8sdp"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageCharacter"
+            app:layout_constraintTop_toTopOf="@id/imageCharacter" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="0dp"
+            android:text="@{character.status}"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_13ssp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/segou_ui_bold"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="@id/textName"
+            app:layout_constraintStart_toStartOf="@id/textName"
+            app:layout_constraintTop_toBottomOf="@id/textName" />
+
+        <TextView
+            android:id="@+id/textSpecies"
+            android:layout_width="0dp"
+            android:text='@{character.species}'
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/segoe_ui"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_12ssp"
+            android:textAllCaps="true"
+            app:layout_constraintEnd_toEndOf="@id/textStatus"
+            app:layout_constraintStart_toStartOf="@id/textStatus"
+            app:layout_constraintTop_toBottomOf="@id/textStatus" />
+
+        <TextView
+            android:id="@+id/textGender"
+            android:layout_width="0dp"
+            android:text="@{character.gender}"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/segoe_ui"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@id/textSpecies"
+            app:layout_constraintStart_toStartOf="@id/textSpecies"
+            app:layout_constraintTop_toBottomOf="@id/textSpecies" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
