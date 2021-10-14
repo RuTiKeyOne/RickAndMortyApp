@@ -14,4 +14,9 @@
     <color name="colorPeach">#E6757B</color>
     <color name="colorRed">#D4225E</color>
 
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#202329</color>
+    <color name="colorBlackLight">#24282F</color>
+    <color name="colorGray">#3C3E44</color>
+
 </resources>

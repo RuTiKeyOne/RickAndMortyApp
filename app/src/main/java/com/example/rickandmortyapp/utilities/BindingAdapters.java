@@ -1,5 +1,6 @@
 package com.example.rickandmortyapp.utilities;
 
+import android.util.Log;
 import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
 import com.squareup.picasso.Callback;
@@ -7,8 +8,8 @@ import com.squareup.picasso.Picasso;
 
 public class BindingAdapters {
     @BindingAdapter("android:imageURL")
-    public static void setImage(ImageView view, String url){
-        try{
+    public static void setImageUrl(ImageView view, String url) {
+        try {
             view.setAlpha(0f);
             Picasso.get().load(url).noFade().into(view, new Callback() {
                 @Override
@@ -21,6 +22,8 @@ public class BindingAdapters {
 
                 }
             });
-        }catch(Exception ex){ }
+        } catch (Exception ex) {
+
+        }
     }
 }

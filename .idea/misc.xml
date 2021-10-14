@@ -6,10 +6,17 @@
         <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/character_containers.xml" value="0.20199275362318841" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/character_fragment.xml" value="0.20199275362318841" />
         <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/characters_fragment.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/episodes_fragment.xml" value="0.20199275362318841" />
         <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_characters.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_episodes.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_locations.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/item_character_container.xml" value="0.264" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/item_character_containers.xml" value="0.176" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/location_fragment.xml" value="0.20199275362318841" />
+        <entry key="..\:/Users/rutikeyone/AndroidStudioProjects/RickAndMortyApp/app/src/main/res/layout/locations_fragment.xml" value="0.1" />
       </map>
     </option>
   </component>

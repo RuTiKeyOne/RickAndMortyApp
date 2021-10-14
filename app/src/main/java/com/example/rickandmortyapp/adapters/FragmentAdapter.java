@@ -6,10 +6,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.rickandmortyapp.fragments.Characters;
-import com.example.rickandmortyapp.fragments.Episodes;
-import com.example.rickandmortyapp.fragments.Locations;
-import com.example.rickandmortyapp.viewmodels.MainViewModel;
+import com.example.rickandmortyapp.fragmentactivities.Characters;
+import com.example.rickandmortyapp.fragmentactivities.Episodes;
+import com.example.rickandmortyapp.fragmentactivities.Locations;
+import com.example.rickandmortyapp.viewmodels.viewmodelavtivity.MainViewModel;
 
 public class FragmentAdapter extends FragmentStateAdapter {
 

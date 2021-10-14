@@ -3,7 +3,6 @@ package com.example.rickandmortyapp.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -13,16 +12,15 @@ import android.widget.Toast;
 import com.example.rickandmortyapp.R;
 import com.example.rickandmortyapp.adapters.FragmentAdapter;
 import com.example.rickandmortyapp.databinding.ActivityMainBinding;
-import com.example.rickandmortyapp.responses.CharacterResponse;
-import com.example.rickandmortyapp.viewmodels.CharactersViewModel;
-import com.example.rickandmortyapp.viewmodels.MainViewModel;
+import com.example.rickandmortyapp.response.CharacterResponse;
+import com.example.rickandmortyapp.viewmodels.viewmodelavtivity.MainViewModel;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding mainBinding;
     private FragmentAdapter adapter;
-    private MainViewModel viewModel;
+    private MainViewModel mainViewModel;
 
 
 
@@ -30,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
         setTabLayout();
+
     }
 
     private void setTabLayout(){
@@ -53,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 mainBinding.mainTabLayout.selectTab(mainBinding.mainTabLayout.getTabAt(position));
-
             }
         });
 

@@ -20,31 +20,32 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:background="@color/colorBlueDark">
+        android:orientation="horizontal">
 
 
         <GridLayout
             android:id="@+id/layoutHeader"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp"
             android:animateLayoutChanges="true"
             android:columnCount="2"
             android:orientation="horizontal"
-            app:titleTextColor="@color/colorGrayLight"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:layout_marginBottom="@dimen/_4sdp">
+            android:background="@color/colorWhite">
 
             <TextView
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:ellipsize="end"
-                android:fontFamily="@font/ubuntubold"
+                android:fontFamily="@font/segou_ui_bold"
                 android:includeFontPadding="false"
                 android:paddingStart="@dimen/_8sdp"
                 android:text="@string/app_name"
-                android:textColor="@color/colorGrayLight"
-                android:textSize="@dimen/_14ssp" />
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
 
             <LinearLayout
                 android:layout_height="match_parent"
@@ -55,7 +56,8 @@
                     android:layout_width="@dimen/_24sdp"
                     android:layout_height="@dimen/_24sdp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_search" />
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/colorBlack" />
 
             </LinearLayout>
 
@@ -64,16 +66,16 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/mainTabLayout"
+            style="@style/TabLayoutCustom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/layoutHeader"
-            android:background="@color/colorBlueDark"
-            style="@style/TabLayoutCustom">
+            android:background="@color/colorWhite">
 
-           <com.google.android.material.tabs.TabItem
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/characters" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/characters" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"

@@ -1,6 +1,10 @@
-package com.example.rickandmortyapp.viewmodels;
+package com.example.rickandmortyapp.viewmodels.viewmodelavtivity;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.rickandmortyapp.repositories.CharactersRepository;
+import com.example.rickandmortyapp.response.CharacterResponse;
 
 public class MainViewModel extends ViewModel {
     public static final int LOCATION_FRAGMENT_KEY = 1;

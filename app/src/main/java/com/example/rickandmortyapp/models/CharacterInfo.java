@@ -2,26 +2,27 @@ package com.example.rickandmortyapp.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Details {
+public class CharacterInfo {
+
     @SerializedName("count")
-    private String count;
+    private int count;
 
     @SerializedName("pages")
-    private String pages;
+    private int pages;
 
-    public String getCount() {
+    public int getCount() {
         return count;
     }
 
-    public void setCount(String count) {
+    public void setCount(int count) {
         this.count = count;
     }
 
-    public String getPages() {
+    public int getPages() {
         return pages;
     }
 
-    public void setPages(String pages) {
+    public void setPages(int pages) {
         this.pages = pages;
     }
 }

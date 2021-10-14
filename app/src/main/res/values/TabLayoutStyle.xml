@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="TabLayoutCustom">
-        <item name="fontFamily">@font/ubuntumedium</item>
-        <item name="tabTextColor">@color/colorGrayLight</item>
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="tabTextColor">@color/colorBlack</item>
         <item name="tabIndicatorColor">@color/colorGrayLight</item>
-        <item name="tabRippleColor">@color/colorBlueLight</item>
+        <item name="tabRippleColor">@color/colorBlackLight</item>
     </style>
 </resources>

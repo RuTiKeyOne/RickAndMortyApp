@@ -1,10 +1,10 @@
-package com.example.rickandmortyapp.models.character;
+package com.example.rickandmortyapp.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import retrofit2.http.Query;
+import java.io.Serializable;
 
-public class Character {
+public class Character implements Serializable {
 
     @SerializedName("name")
     private String name;
@@ -20,6 +20,18 @@ public class Character {
 
     @SerializedName("image")
     private String imageUrl;
+
+    @SerializedName("created")
+    private String createdDate;
+
+    public Character(String name, String status, String species, String gender, String imageUrl, String createdDate) {
+        this.name = name;
+        this.status = status;
+        this.species = species;
+        this.gender = gender;
+        this.imageUrl = imageUrl;
+        this.createdDate = createdDate;
+    }
 
     public String getName() {
         return name;
@@ -59,5 +71,13 @@ public class Character {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
     }
 }
