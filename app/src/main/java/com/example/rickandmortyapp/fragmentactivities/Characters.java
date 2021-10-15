@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.rickandmortyapp.adapters.CharactersAdapter;
 import com.example.rickandmortyapp.databinding.CharactersFragmentBinding;
-import com.example.rickandmortyapp.models.Character;
+import com.example.rickandmortyapp.models.characterdata.Character;
 import com.example.rickandmortyapp.repositories.CharactersRepository;
 import com.example.rickandmortyapp.response.CharacterResponse;
 import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.CharactersViewModel;
@@ -33,6 +34,9 @@ public class Characters extends Fragment {
     private CharactersFragmentBinding charactersBinding;
     private List<Character> characters = new ArrayList<>();
     private CharactersAdapter adapter;
+
+    private int currentPage = 1;
+    private int totalAvailablePages = 1;
 
     public static Characters newInstance() {
         return new Characters();
@@ -53,14 +57,56 @@ public class Characters extends Fragment {
         charactersViewModel = new ViewModelProvider(this).get(CharactersViewModel.class);
         adapter = new CharactersAdapter(characters);
         charactersBinding.charactersRecycleView.setAdapter(adapter);
+        ScrollRecycleViewManager();
     }
 
-    private void getCharacters(){
-        charactersViewModel.getCharacters(1).observe(getViewLifecycleOwner(), characterResponse -> {
-            characters.addAll(characterResponse.getCharacters());
-            adapter.notifyDataSetChanged();
+    private void getCharacters() {
+        toggleLoadingManager();
+        charactersViewModel.getCharacters(currentPage).observe(getViewLifecycleOwner(), characterResponse -> {
+            if (characterResponse != null) {
+                totalAvailablePages = characterResponse.getInfo().getPages();
+                characters.addAll(characterResponse.getCharacters());
+                adapter.notifyDataSetChanged();
+                toggleLoadingManager();
+            }
         });
     }
 
+    private void toggleLoadingManager(){
+        if(currentPage == 1){
+            toggleStartLoading();
+        }else{
+            toggleMoreLoading();
+        }
+    }
+
+    private void toggleStartLoading() {
+        if (charactersBinding.getIsLoading() != null && charactersBinding.getIsLoading()) {
+            charactersBinding.setIsLoading(false);
+        } else {
+            charactersBinding.setIsLoading(true);
+        }
+    }
+
+    private void toggleMoreLoading() {
+        if (charactersBinding.getIsLoadingMore() != null && charactersBinding.getIsLoadingMore()) {
+            charactersBinding.setIsLoadingMore(false);
+        } else {
+            charactersBinding.setIsLoadingMore(true);
+        }
+    }
+
+    private void ScrollRecycleViewManager() {
+        charactersBinding.charactersRecycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (!charactersBinding.charactersRecycleView.canScrollVertically(1) && currentPage <= totalAvailablePages) {
+                    currentPage += 1;
+                    getCharacters();
+                }
+            }
+        });
+    }
 
 }

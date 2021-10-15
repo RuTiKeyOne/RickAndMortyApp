@@ -6,7 +6,7 @@
     <data>
         <variable
             name="character"
-            type="com.example.rickandmortyapp.models.Character" />
+            type="com.example.rickandmortyapp.models.characterdata.Character" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,6 +18,7 @@
             android:id="@+id/viewSupporter"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@id/imageCharacter" />
 
         <View
@@ -94,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_3sdp"
             android:fontFamily="@font/segoe_ui"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="@id/textSpecies"
             app:layout_constraintStart_toStartOf="@id/textSpecies"

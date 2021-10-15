@@ -1,7 +1,7 @@
 package com.example.rickandmortyapp.response;
 
-import com.example.rickandmortyapp.models.Character;
-import com.example.rickandmortyapp.models.CharacterInfo;
+import com.example.rickandmortyapp.models.characterdata.Character;
+import com.example.rickandmortyapp.models.characterdata.CharacterInfo;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

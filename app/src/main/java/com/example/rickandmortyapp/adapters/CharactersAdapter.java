@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rickandmortyapp.R;
 import com.example.rickandmortyapp.databinding.ItemCharacterContainerBinding;
-import com.example.rickandmortyapp.models.Character;
+import com.example.rickandmortyapp.models.characterdata.Character;
 
 import java.util.List;
 
