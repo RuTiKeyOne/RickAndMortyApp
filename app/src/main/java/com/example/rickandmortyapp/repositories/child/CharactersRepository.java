@@ -1,13 +1,12 @@
-package com.example.rickandmortyapp.repositories;
-
-import android.util.Log;
+package com.example.rickandmortyapp.repositories.child;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.rickandmortyapp.network.ApiClient;
 import com.example.rickandmortyapp.network.ApiService;
-import com.example.rickandmortyapp.response.CharacterResponse;
+import com.example.rickandmortyapp.repositories.parent.Repository;
+import com.example.rickandmortyapp.response.child.CharacterResponse;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -15,14 +14,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CharactersRepository {
-    private ApiService service;
+public class CharactersRepository extends Repository<CharacterResponse> {
 
-    public CharactersRepository() {
-        service = ApiClient.getRetrofit().create(ApiService.class);
-    }
-
-    public LiveData<CharacterResponse> getCharacters(int page){
+    @Override
+    public LiveData<CharacterResponse> getDataByPage(int page){
         MutableLiveData<CharacterResponse> data = new MutableLiveData<>();
         service.getCharacters(page).enqueue(new Callback<CharacterResponse>() {
             @Override

@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.EpisodesViewModel;
+import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.EpisodesViewModel;
 import com.example.rickandmortyapp.R;
 
 public class Episodes extends Fragment {

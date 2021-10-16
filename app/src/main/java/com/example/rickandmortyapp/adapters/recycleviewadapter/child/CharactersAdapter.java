@@ -1,10 +1,7 @@
-package com.example.rickandmortyapp.adapters;
+package com.example.rickandmortyapp.adapters.recycleviewadapter.child;
 
-import android.database.DatabaseUtils;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;

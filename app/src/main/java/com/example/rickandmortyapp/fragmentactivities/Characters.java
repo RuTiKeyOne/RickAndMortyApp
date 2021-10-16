@@ -1,6 +1,5 @@
 package com.example.rickandmortyapp.fragmentactivities;
 
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -10,22 +9,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.example.rickandmortyapp.adapters.CharactersAdapter;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.child.CharactersAdapter;
 import com.example.rickandmortyapp.databinding.CharactersFragmentBinding;
 import com.example.rickandmortyapp.models.characterdata.Character;
-import com.example.rickandmortyapp.repositories.CharactersRepository;
-import com.example.rickandmortyapp.response.CharacterResponse;
-import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.CharactersViewModel;
-import com.example.rickandmortyapp.R;
+import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.CharactersViewModel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Characters extends Fragment {
@@ -45,15 +38,20 @@ public class Characters extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        charactersBinding = CharactersFragmentBinding.inflate(inflater, container, false);
-        View view = charactersBinding.getRoot();
-        initializeComponentsView();
+        initializeComponentsView(inflater, container, savedInstanceState);
         getCharacters();
+        return setInitialView();
+    }
+
+    private View setInitialView(){
+        View view = charactersBinding.getRoot();
         return view;
     }
 
 
-    private void initializeComponentsView() {
+    private void initializeComponentsView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                                          @Nullable Bundle savedInstanceState) {
+        charactersBinding = CharactersFragmentBinding.inflate(inflater, container, false);
         charactersViewModel = new ViewModelProvider(this).get(CharactersViewModel.class);
         adapter = new CharactersAdapter(characters);
         charactersBinding.charactersRecycleView.setAdapter(adapter);
@@ -62,7 +60,7 @@ public class Characters extends Fragment {
 
     private void getCharacters() {
         toggleLoadingManager();
-        charactersViewModel.getCharacters(currentPage).observe(getViewLifecycleOwner(), characterResponse -> {
+        charactersViewModel.getDataByPage(currentPage).observe(getViewLifecycleOwner(), characterResponse -> {
             if (characterResponse != null) {
                 totalAvailablePages = characterResponse.getInfo().getPages();
                 characters.addAll(characterResponse.getCharacters());

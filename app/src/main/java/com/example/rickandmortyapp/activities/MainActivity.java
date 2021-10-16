@@ -2,17 +2,14 @@ package com.example.rickandmortyapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.rickandmortyapp.R;
 import com.example.rickandmortyapp.adapters.FragmentAdapter;
 import com.example.rickandmortyapp.databinding.ActivityMainBinding;
-import com.example.rickandmortyapp.response.CharacterResponse;
 import com.example.rickandmortyapp.viewmodels.viewmodelavtivity.MainViewModel;
 import com.google.android.material.tabs.TabLayout;
 

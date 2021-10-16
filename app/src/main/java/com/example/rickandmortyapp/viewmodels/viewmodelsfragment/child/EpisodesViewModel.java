@@ -1,4 +1,4 @@
-package com.example.rickandmortyapp.viewmodels.viewmodelsfragment;
+package com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child;
 
 import androidx.lifecycle.ViewModel;
 

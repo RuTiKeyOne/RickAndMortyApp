@@ -1,12 +1,13 @@
-package com.example.rickandmortyapp.response;
+package com.example.rickandmortyapp.response.child;
 
 import com.example.rickandmortyapp.models.characterdata.Character;
 import com.example.rickandmortyapp.models.characterdata.CharacterInfo;
+import com.example.rickandmortyapp.response.parent.Response;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class CharacterResponse {
+public class CharacterResponse extends Response {
 
     @SerializedName("info")
     private CharacterInfo info;
