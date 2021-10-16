@@ -13,7 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.rickandmortyapp.R;
 import com.example.rickandmortyapp.adapters.recycleviewadapter.child.CharactersAdapter;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.command.child.CharacterCommands;
 import com.example.rickandmortyapp.databinding.CharactersFragmentBinding;
 import com.example.rickandmortyapp.models.characterdata.Character;
 import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.CharactersViewModel;
@@ -53,7 +55,7 @@ public class Characters extends Fragment {
                                           @Nullable Bundle savedInstanceState) {
         charactersBinding = CharactersFragmentBinding.inflate(inflater, container, false);
         charactersViewModel = new ViewModelProvider(this).get(CharactersViewModel.class);
-        adapter = new CharactersAdapter(characters);
+        adapter = new CharactersAdapter(characters, new CharacterCommands(), R.layout.item_character_container);
         charactersBinding.charactersRecycleView.setAdapter(adapter);
         ScrollRecycleViewManager();
     }
