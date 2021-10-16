@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="location"
+            type="com.example.rickandmortyapp.models.locationdata.Location" />
+    </data>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/background_character"
+            android:padding="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/segou_ui_bold"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:text="@{location.name}"
+                android:includeFontPadding="false"
+                android:layout_margin="@dimen/_3sdp"
+                android:textSize="@dimen/_12ssp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/segou_ui_bold"
+                android:textColor="@color/colorWhite"
+                android:text="@{location.type}"
+                android:includeFontPadding="false"
+                android:layout_margin="@dimen/_3sdp"
+                android:textSize="@dimen/_12ssp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubunturegular"
+                android:textColor="@color/colorWhite"
+                android:text='@{location.dimension}'
+                android:includeFontPadding="false"
+                android:layout_margin="@dimen/_3sdp"
+                android:textSize="@dimen/_10ssp"/>
+
+        </LinearLayout>
+
+</layout>

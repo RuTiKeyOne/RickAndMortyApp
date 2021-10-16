@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,7 @@ public class Characters extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         initializeComponentsView(inflater, container, savedInstanceState);
+        ScrollRecycleViewManager();
         getCharacters();
         return setInitialView();
     }
@@ -57,7 +59,7 @@ public class Characters extends Fragment {
         charactersViewModel = new ViewModelProvider(this).get(CharactersViewModel.class);
         adapter = new CharactersAdapter(characters, new CharacterCommands(), R.layout.item_character_container);
         charactersBinding.charactersRecycleView.setAdapter(adapter);
-        ScrollRecycleViewManager();
+
     }
 
     private void getCharacters() {
@@ -67,8 +69,8 @@ public class Characters extends Fragment {
                 totalAvailablePages = characterResponse.getInfo().getPages();
                 characters.addAll(characterResponse.getCharacters());
                 adapter.notifyDataSetChanged();
-                toggleLoadingManager();
             }
+            toggleLoadingManager();
         });
     }
 
