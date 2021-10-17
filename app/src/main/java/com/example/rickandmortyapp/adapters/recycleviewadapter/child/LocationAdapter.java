@@ -1,6 +1,6 @@
 package com.example.rickandmortyapp.adapters.recycleviewadapter.child;
 
-import com.example.rickandmortyapp.adapters.recycleviewadapter.command.base.BaseCommand;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.base.BaseCommand;
 import com.example.rickandmortyapp.adapters.recycleviewadapter.parent.DataAdapter;
 import com.example.rickandmortyapp.models.locationdata.Location;
 

@@ -1,4 +1,4 @@
-package com.example.rickandmortyapp.fragmentactivities;
+package com.example.rickandmortyapp.fragmentactivities.child;
 
 import androidx.lifecycle.ViewModelProvider;
 

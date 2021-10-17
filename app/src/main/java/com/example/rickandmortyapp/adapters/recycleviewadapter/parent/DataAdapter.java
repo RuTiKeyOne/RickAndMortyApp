@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.rickandmortyapp.adapters.recycleviewadapter.command.base.BaseCommand;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.base.BaseCommand;
 
 import java.util.List;
 

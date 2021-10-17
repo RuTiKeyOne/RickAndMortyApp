@@ -1,12 +1,11 @@
-package com.example.rickandmortyapp.adapters.recycleviewadapter.command.child;
+package com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
-import com.example.rickandmortyapp.R;
-import com.example.rickandmortyapp.adapters.recycleviewadapter.command.base.BaseCommand;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.base.BaseCommand;
 import com.example.rickandmortyapp.databinding.ItemCharacterContainerBinding;
 import com.example.rickandmortyapp.models.characterdata.Character;
 
