@@ -12,28 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.base.BaseCommand;
+import com.example.rickandmortyapp.fragmentactivities.commandpattern.base.BaseActivityCommand;
+import com.example.rickandmortyapp.fragmentactivities.parent.BaseFragmentActivity;
+import com.example.rickandmortyapp.response.child.EpisodeResponse;
+import com.example.rickandmortyapp.response.parent.Response;
 import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.EpisodesViewModel;
 import com.example.rickandmortyapp.R;
 
-public class Episodes extends Fragment {
-
-    private EpisodesViewModel mViewModel;
-
-    public static Episodes newInstance() {
-        return new Episodes();
+public class Episodes extends BaseFragmentActivity<Episodes> {
+    public Episodes(BaseActivityCommand command, BaseCommand baseCommand, int idLayout) {
+        super(command, baseCommand, idLayout, new EpisodeResponse());
     }
-
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.episodes_fragment, container, false);
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(EpisodesViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
 }

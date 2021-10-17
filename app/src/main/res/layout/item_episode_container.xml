@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="episode"
+            type="com.example.rickandmortyapp.models.episodedata.Episode" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/background_character"
+        android:padding="@dimen/_8sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segou_ui_bold"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:text="@{episode.name}"
+            android:includeFontPadding="false"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_12ssp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segou_ui_bold"
+            android:textColor="@color/colorWhite"
+            android:text="@{episode.episode}"
+            android:includeFontPadding="false"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_12ssp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubunturegular"
+            android:textColor="@color/colorWhite"
+            android:text='@{episode.air_date}'
+            android:includeFontPadding="false"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_10ssp"/>
+
+    </LinearLayout>
+
+</layout>

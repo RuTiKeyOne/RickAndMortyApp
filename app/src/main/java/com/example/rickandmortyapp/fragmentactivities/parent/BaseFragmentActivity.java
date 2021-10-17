@@ -71,7 +71,6 @@ public class BaseFragmentActivity<Data> extends Fragment implements ScrollListen
         LoadManager();
         viewModel.getDataByPage(currentPage).observe(getViewLifecycleOwner(), response -> {
             totalAvailablePages  = command.getTotalAvailablePages(response);
-            Log.d("log", totalAvailablePages + " total");
             data.addAll(command.getData(response));
             adapter.notifyDataSetChanged();
             LoadManager();
@@ -113,7 +112,6 @@ public class BaseFragmentActivity<Data> extends Fragment implements ScrollListen
         if(canScrollVertically && currentPage < totalAvailablePages){
             currentPage+=1;
             getData();
-            Log.d("log", currentPage + "");
         }
     }
 

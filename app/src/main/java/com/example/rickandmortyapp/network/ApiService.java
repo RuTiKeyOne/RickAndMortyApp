@@ -1,6 +1,7 @@
 package com.example.rickandmortyapp.network;
 
 import com.example.rickandmortyapp.response.child.CharacterResponse;
+import com.example.rickandmortyapp.response.child.EpisodeResponse;
 import com.example.rickandmortyapp.response.child.LocationResponse;
 
 import retrofit2.Call;
@@ -13,4 +14,7 @@ public interface ApiService {
 
     @GET("location")
     Call<LocationResponse> getLocations(@Query("page") int page);
+
+    @GET("episode")
+    Call<EpisodeResponse> getEpisodes(@Query("page") int page);
 }
