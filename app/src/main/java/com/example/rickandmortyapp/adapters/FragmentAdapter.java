@@ -16,12 +16,9 @@ import com.example.rickandmortyapp.fragmentactivities.child.Locations;
 import com.example.rickandmortyapp.fragmentactivities.commandpattern.child.CharacterActivityCommand;
 import com.example.rickandmortyapp.fragmentactivities.commandpattern.child.EpisodeActivityCommand;
 import com.example.rickandmortyapp.fragmentactivities.commandpattern.child.LocationActivityCommand;
-import com.example.rickandmortyapp.models.characterdata.Character;
 import com.example.rickandmortyapp.viewmodels.viewmodelavtivity.MainViewModel;
 
 public class FragmentAdapter extends FragmentStateAdapter {
-
-    private Characters characters;
 
     public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
@@ -31,6 +28,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch(position) {
+
             case MainViewModel.LOCATION_FRAGMENT_KEY:
                 return new Locations(new LocationActivityCommand(), new LocationCommands(), R.layout.item_location_container);
             case MainViewModel.EPISODES_FRAGMENT_KEY:

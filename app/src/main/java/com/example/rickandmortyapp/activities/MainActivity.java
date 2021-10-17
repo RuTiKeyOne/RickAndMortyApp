@@ -1,33 +1,45 @@
 package com.example.rickandmortyapp.activities;
 
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.os.Bundle;
-
 import com.example.rickandmortyapp.R;
+import com.example.rickandmortyapp.activities.commandpatter.child.CharacterIntentCommand;
+import com.example.rickandmortyapp.activities.commandpatter.child.EpisodeIntentCommand;
+import com.example.rickandmortyapp.activities.commandpatter.child.LocationIntentCommand;
+import com.example.rickandmortyapp.activities.commandpatter.parent.BaseIntentCommand;
 import com.example.rickandmortyapp.adapters.FragmentAdapter;
 import com.example.rickandmortyapp.databinding.ActivityMainBinding;
 import com.example.rickandmortyapp.viewmodels.viewmodelavtivity.MainViewModel;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private ActivityMainBinding mainBinding;
     private FragmentAdapter adapter;
     private MainViewModel mainViewModel;
-
+    private BaseIntentCommand intentCommand;
+    private BaseIntentCommand[] intentCommands;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initializeComponents();
+        setTabLayout();
+        setIntentAction();
+    }
+
+    private void initializeComponents(){
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        setTabLayout();
-
+        intentCommand = new CharacterIntentCommand();
+        intentCommands = new BaseIntentCommand[] {new CharacterIntentCommand(), new LocationIntentCommand(), new EpisodeIntentCommand()};
     }
 
     private void setTabLayout(){
@@ -49,8 +61,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 mainBinding.mainTabLayout.selectTab(mainBinding.mainTabLayout.getTabAt(position));
+                changeSearchCommand(intentCommands[position]);
             }
         });
-
     }
+
+    private void setIntentAction(){
+        mainBinding.imageSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentCommand.executeCommandActivity(getApplicationContext()));
+            }
+        });
+    }
+
+    private void changeSearchCommand(BaseIntentCommand command){
+        intentCommand = command;
+    }
+
 }

@@ -20,7 +20,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
 
         <GridLayout
@@ -53,6 +53,7 @@
                 android:layout_marginEnd="@dimen/_8sdp">
 
                 <ImageView
+                    android:id="@+id/imageSearch"
                     android:layout_width="@dimen/_24sdp"
                     android:layout_height="@dimen/_24sdp"
                     android:layout_gravity="center_vertical"
