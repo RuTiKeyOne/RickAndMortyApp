@@ -3,22 +3,28 @@ package com.example.rickandmortyapp.activities;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.rickandmortyapp.R;
+import com.example.rickandmortyapp.activities.child.Activity;
 import com.example.rickandmortyapp.activities.commandpatter.child.CharacterIntentCommand;
 import com.example.rickandmortyapp.activities.commandpatter.child.EpisodeIntentCommand;
 import com.example.rickandmortyapp.activities.commandpatter.child.LocationIntentCommand;
 import com.example.rickandmortyapp.activities.commandpatter.parent.BaseIntentCommand;
 import com.example.rickandmortyapp.adapters.FragmentAdapter;
 import com.example.rickandmortyapp.databinding.ActivityMainBinding;
+import com.example.rickandmortyapp.response.child.CharacterResponse;
+import com.example.rickandmortyapp.response.child.EpisodeResponse;
+import com.example.rickandmortyapp.response.child.LocationResponse;
 import com.example.rickandmortyapp.viewmodels.viewmodelavtivity.MainViewModel;
+import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.CharactersViewModel;
+import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.EpisodesViewModel;
+import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.LocationsViewModel;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends Activity {
 
     private ActivityMainBinding mainBinding;
     private FragmentAdapter adapter;
@@ -38,8 +44,13 @@ public class MainActivity extends AppCompatActivity{
     private void initializeComponents(){
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        intentCommand = new CharacterIntentCommand();
-        intentCommands = new BaseIntentCommand[] {new CharacterIntentCommand(), new LocationIntentCommand(), new EpisodeIntentCommand()};
+        intentCommands = new BaseIntentCommand[]
+                {   new CharacterIntentCommand(new CharactersViewModel(), this, new CharacterResponse()),
+                    new LocationIntentCommand(new LocationsViewModel(), this, new LocationResponse()),
+                    new EpisodeIntentCommand(new EpisodesViewModel(), this, new EpisodeResponse())
+                };
+        intentCommand = intentCommands[0];
+
     }
 
     private void setTabLayout(){
@@ -64,6 +75,7 @@ public class MainActivity extends AppCompatActivity{
                 changeSearchCommand(intentCommands[position]);
             }
         });
+
     }
 
     private void setIntentAction(){
