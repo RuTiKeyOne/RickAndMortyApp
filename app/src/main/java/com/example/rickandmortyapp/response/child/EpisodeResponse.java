@@ -22,4 +22,5 @@ public class EpisodeResponse extends Response {
     public List<Episode> getEpisodes() {
         return episodes;
     }
+
 }

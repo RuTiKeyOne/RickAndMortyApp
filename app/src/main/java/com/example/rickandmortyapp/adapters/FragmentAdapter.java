@@ -7,15 +7,15 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.rickandmortyapp.R;
-import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child.CharacterCommands;
-import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child.EpisodeCommands;
-import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child.LocationCommands;
-import com.example.rickandmortyapp.fragmentactivities.child.Characters;
-import com.example.rickandmortyapp.fragmentactivities.child.Episodes;
-import com.example.rickandmortyapp.fragmentactivities.child.Locations;
-import com.example.rickandmortyapp.fragmentactivities.commandpattern.child.CharacterActivityCommand;
-import com.example.rickandmortyapp.fragmentactivities.commandpattern.child.EpisodeActivityCommand;
-import com.example.rickandmortyapp.fragmentactivities.commandpattern.child.LocationActivityCommand;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child.CharacterCommand;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child.EpisodeCommand;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child.LocationCommand;
+import com.example.rickandmortyapp.fragment_activities.child.Characters;
+import com.example.rickandmortyapp.fragment_activities.child.Episodes;
+import com.example.rickandmortyapp.fragment_activities.child.Locations;
+import com.example.rickandmortyapp.fragment_activities.commandpattern.child.CharacterActivityCommand;
+import com.example.rickandmortyapp.fragment_activities.commandpattern.child.EpisodeActivityCommand;
+import com.example.rickandmortyapp.fragment_activities.commandpattern.child.LocationActivityCommand;
 import com.example.rickandmortyapp.viewmodels.viewmodelavtivity.MainViewModel;
 
 public class FragmentAdapter extends FragmentStateAdapter {
@@ -30,12 +30,15 @@ public class FragmentAdapter extends FragmentStateAdapter {
         switch(position) {
 
             case MainViewModel.LOCATION_FRAGMENT_KEY:
-                return new Locations(new LocationActivityCommand(), new LocationCommands(), R.layout.item_location_container);
+                return new Locations(new LocationActivityCommand(), new LocationCommand(),
+                        R.layout.item_location_container);
             case MainViewModel.EPISODES_FRAGMENT_KEY:
-                return new Episodes(new EpisodeActivityCommand(), new EpisodeCommands(), R.layout.item_episode_container);
+                return new Episodes(new EpisodeActivityCommand(), new EpisodeCommand(),
+                        R.layout.item_episode_container);
         }
 
-        return new Characters(new CharacterActivityCommand(), new CharacterCommands(), R.layout.item_character_container);
+        return new Characters(new CharacterActivityCommand(), new CharacterCommand(),
+                R.layout.item_character_container);
     }
 
     @Override

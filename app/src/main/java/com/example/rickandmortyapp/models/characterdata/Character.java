@@ -24,14 +24,6 @@ public class Character implements Serializable {
     @SerializedName("created")
     private String createdDate;
 
-    public Character(String name, String status, String species, String gender, String imageUrl, String createdDate) {
-        this.name = name;
-        this.status = status;
-        this.species = species;
-        this.gender = gender;
-        this.imageUrl = imageUrl;
-        this.createdDate = createdDate;
-    }
 
     public String getName() {
         return name;

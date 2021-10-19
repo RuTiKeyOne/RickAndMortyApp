@@ -15,6 +15,14 @@ public class CharacterResponse extends Response {
     @SerializedName("results")
     private List<Character> characters;
 
+    public void setInfo(CharacterInfo info) {
+        this.info = info;
+    }
+
+    public void setCharacters(List<Character> characters) {
+        this.characters = characters;
+    }
+
     public List<Character> getCharacters() {
         return characters;
     }
@@ -22,4 +30,5 @@ public class CharacterResponse extends Response {
     public CharacterInfo getInfo() {
         return info;
     }
+
 }

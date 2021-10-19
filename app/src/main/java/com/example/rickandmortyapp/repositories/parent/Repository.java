@@ -1,10 +1,11 @@
 package com.example.rickandmortyapp.repositories.parent;
 
+import android.content.Intent;
+
 import androidx.lifecycle.LiveData;
 
 import com.example.rickandmortyapp.network.ApiClient;
 import com.example.rickandmortyapp.network.ApiService;
-import com.example.rickandmortyapp.response.child.CharacterResponse;
 
 public abstract class Repository<T> {
 
@@ -15,5 +16,6 @@ public abstract class Repository<T> {
     }
 
     public abstract LiveData<T> getDataByPage(int page);
+
 
 }

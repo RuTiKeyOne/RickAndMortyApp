@@ -30,7 +30,7 @@
             android:paddingTop="@dimen/_4sdp"
             android:paddingBottom="@dimen/_4sdp"
             android:animateLayoutChanges="true"
-            android:columnCount="2"
+            android:columnCount="1"
             android:orientation="horizontal"
             android:background="@color/colorWhite">
 
@@ -46,21 +46,6 @@
                 android:textSize="@dimen/_14ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
-
-            <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:layout_marginEnd="@dimen/_8sdp">
-
-                <ImageView
-                    android:id="@+id/imageSearch"
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_search"
-                    app:tint="@color/colorBlack" />
-
-            </LinearLayout>
 
 
         </GridLayout>

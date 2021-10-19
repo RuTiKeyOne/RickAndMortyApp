@@ -16,6 +16,7 @@ import retrofit2.Response;
 public class LocationsRepository extends Repository<LocationResponse> {
 
 
+
     @Override
     public LiveData<LocationResponse> getDataByPage(int page) {
         MutableLiveData<LocationResponse> data = new MutableLiveData<>();
@@ -28,7 +29,7 @@ public class LocationsRepository extends Repository<LocationResponse> {
 
             @Override
             public void onFailure(@NotNull Call<LocationResponse> call,@NotNull Throwable t) {
-                data.setValue(null);
+                throw new NullPointerException();
             }
         });
 

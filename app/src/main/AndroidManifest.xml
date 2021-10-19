@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RickAndMortyApp">
         <activity
+            android:name=".activities.child.ErrorActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.child.searchactivities.parent.SearchActivity"
             android:exported="true" />
         <activity
