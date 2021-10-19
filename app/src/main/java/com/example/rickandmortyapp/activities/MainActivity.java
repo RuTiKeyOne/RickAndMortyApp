@@ -8,20 +8,14 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.rickandmortyapp.R;
-import com.example.rickandmortyapp.activities.child.Activity;
 import com.example.rickandmortyapp.activities.commandpatter.child.CharacterIntentCommand;
 import com.example.rickandmortyapp.activities.commandpatter.child.EpisodeIntentCommand;
 import com.example.rickandmortyapp.activities.commandpatter.child.LocationIntentCommand;
 import com.example.rickandmortyapp.activities.commandpatter.parent.BaseIntentCommand;
+import com.example.rickandmortyapp.activities.parent.Activity;
 import com.example.rickandmortyapp.adapters.FragmentAdapter;
 import com.example.rickandmortyapp.databinding.ActivityMainBinding;
-import com.example.rickandmortyapp.response.child.CharacterResponse;
-import com.example.rickandmortyapp.response.child.EpisodeResponse;
-import com.example.rickandmortyapp.response.child.LocationResponse;
 import com.example.rickandmortyapp.viewmodels.viewmodelavtivity.MainViewModel;
-import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.CharactersViewModel;
-import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.EpisodesViewModel;
-import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.LocationsViewModel;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends Activity {
@@ -31,6 +25,7 @@ public class MainActivity extends Activity {
     private MainViewModel mainViewModel;
     private BaseIntentCommand intentCommand;
     private BaseIntentCommand[] intentCommands;
+
 
 
     @Override
@@ -45,9 +40,9 @@ public class MainActivity extends Activity {
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
         intentCommands = new BaseIntentCommand[]
-                {   new CharacterIntentCommand(new CharactersViewModel(), this, new CharacterResponse()),
-                    new LocationIntentCommand(new LocationsViewModel(), this, new LocationResponse()),
-                    new EpisodeIntentCommand(new EpisodesViewModel(), this, new EpisodeResponse())
+                {   new CharacterIntentCommand(),
+                    new LocationIntentCommand(),
+                    new EpisodeIntentCommand()
                 };
         intentCommand = intentCommands[0];
 

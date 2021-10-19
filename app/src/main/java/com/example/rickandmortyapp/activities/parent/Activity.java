@@ -1,4 +1,4 @@
-package com.example.rickandmortyapp.activities.child;
+package com.example.rickandmortyapp.activities.parent;
 
 import androidx.appcompat.app.AppCompatActivity;
 

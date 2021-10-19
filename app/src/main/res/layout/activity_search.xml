@@ -17,11 +17,10 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:animateLayoutChanges="true"
-        tools:context=".activities.SearchActivity">
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/layoutHeader"
@@ -75,21 +74,11 @@
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/tvShowRecycleView"
-            android:background="@color/colorBlackLight"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/mainViewPager"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:paddingStart="@dimen/_4sdp"
-            android:paddingTop="@dimen/_4sdp"
-            android:paddingEnd="@dimen/_4sdp"
-            android:paddingBottom="@dimen/_45sdp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutHeader"/>
-
+            android:layout_height="match_parent"
+            android:layout_below="@id/layoutHeader" />
 
         <ProgressBar
             android:layout_width="@dimen/_25sdp"
@@ -108,6 +97,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </layout>
