@@ -1,26 +1,22 @@
 package com.example.rickandmortyapp.activities.child.searchactivities.child;
 
-import android.os.Bundle;
-
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.rickandmortyapp.R;
 import com.example.rickandmortyapp.activities.child.searchactivities.parent.SearchActivity;
 import com.example.rickandmortyapp.adapters.recycleviewadapter.child.CharactersAdapter;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.child.LocationAdapter;
 import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child.CharacterCommands;
-import com.example.rickandmortyapp.models.characterdata.Character;
-import com.example.rickandmortyapp.response.child.CharacterResponse;
+import com.example.rickandmortyapp.adapters.recycleviewadapter.commandpattern.child.LocationCommands;
+import com.example.rickandmortyapp.response.child.LocationResponse;
 import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.CharactersViewModel;
+import com.example.rickandmortyapp.viewmodels.viewmodelsfragment.child.LocationsViewModel;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class SearchCharacterActivity extends SearchActivity<Character> {
-
+public class SearchLocationActivity extends SearchActivity {
     @Override
     public void getData() {
-        viewModel.getDataByPage(1).observe(this, characterResponse -> {
-            data.addAll(((CharacterResponse)characterResponse).getCharacters());
+        viewModel.getDataByPage(1).observe(this, locationResponse -> {
+            data.addAll(((LocationResponse)locationResponse).getLocations());
             adapter.notifyDataSetChanged();
         });
     }
@@ -28,7 +24,7 @@ public class SearchCharacterActivity extends SearchActivity<Character> {
     @Override
     public void initializeComponents() {
         super.initializeComponents();
-        this.adapter = new CharactersAdapter(data, new CharacterCommands(), R.layout.item_character_container);
-        viewModel = new ViewModelProvider(this).get(CharactersViewModel.class);
+        this.adapter = new LocationAdapter(data, new LocationCommands(), R.layout.item_location_container);
+        viewModel = new ViewModelProvider(this).get(LocationsViewModel.class);
     }
 }

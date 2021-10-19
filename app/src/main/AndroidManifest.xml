@@ -19,6 +19,12 @@
             android:name=".activities.child.searchactivities.child.SearchCharacterActivity"
             android:exported="true" />
         <activity
+            android:name=".activities.child.searchactivities.child.SearchEpisodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.child.searchactivities.child.SearchLocationActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.child.MainActivity"
             android:exported="true">
             <intent-filter>
