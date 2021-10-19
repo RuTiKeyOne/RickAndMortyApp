@@ -13,10 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RickAndMortyApp">
         <activity
-            android:name=".activities.SearchActivity"
+            android:name=".activities.child.searchactivities.parent.SearchActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.child.searchactivities.child.SearchCharacterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.child.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

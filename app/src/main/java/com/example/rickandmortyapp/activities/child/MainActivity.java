@@ -1,4 +1,4 @@
-package com.example.rickandmortyapp.activities;
+package com.example.rickandmortyapp.activities.child;
 
 import android.os.Bundle;
 import android.view.View;

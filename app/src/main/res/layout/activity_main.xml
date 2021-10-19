@@ -9,7 +9,7 @@
 
         <variable
             name="handler"
-            type="com.example.rickandmortyapp.activities.MainActivity" />
+            type="com.example.rickandmortyapp.activities.child.MainActivity" />
         
         <variable
             name="manager"

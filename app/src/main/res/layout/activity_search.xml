@@ -74,8 +74,10 @@
 
         </LinearLayout>
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/mainViewPager"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainRecycleView"
+            android:background="@color/colorBlackLight"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/layoutHeader" />

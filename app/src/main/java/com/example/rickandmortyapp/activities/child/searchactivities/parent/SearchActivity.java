@@ -1,4 +1,4 @@
-package com.example.rickandmortyapp.activities;
+package com.example.rickandmortyapp.activities.child.searchactivities.parent;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,19 +9,21 @@ import com.example.rickandmortyapp.R;
 import com.example.rickandmortyapp.activities.parent.Activity;
 import com.example.rickandmortyapp.databinding.ActivitySearchBinding;
 
-public class SearchActivity extends Activity {
+public abstract class SearchActivity extends Activity {
 
-    private ActivitySearchBinding searchBinding;
+    protected ActivitySearchBinding searchBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initializeComponents();
+        getData();
     }
 
-    private void initializeComponents() {
-        searchBinding = DataBindingUtil.setContentView(this, R.layout.activity_search);
+    public abstract void getData();
 
+    protected void initializeComponents() {
+        searchBinding = DataBindingUtil.setContentView(this, R.layout.activity_search);
         searchBinding.imageBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

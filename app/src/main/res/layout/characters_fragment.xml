@@ -20,7 +20,7 @@
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
         android:background="@color/colorBlackLight"
-        tools:context=".activities.MainActivity">
+        tools:context=".activities.child.MainActivity">
 
 
         <androidx.recyclerview.widget.RecyclerView
