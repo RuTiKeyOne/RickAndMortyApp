@@ -21,4 +21,6 @@ models | <img src="https://i.ibb.co/wdj2bYY/image.png" width="700"/> | Contains 
 network | <img src="https://i.ibb.co/6NFCXrL/image.png" width="700"/> | network contains work with Retrofit and logic for getting data from the Api. To get data in this application, the RIck And Morty Api was used https://rickandmortyapi.com.
 repositories | <img src="https://i.ibb.co/HdLDXwD/image.png" width="700"/> | Contains the implementation of the logic of obtaining and deserializing data for each specific list (characters, locations, episodes).
 response | <img src="https://i.ibb.co/CJWcWxW/image.png" width="700"/> | Contains high-level classes (it contains within itself other classes (models classes)) necessary to obtain data and deserialize them.
-
+utilities | <img src="https://i.ibb.co/RSkXfvz/image.png" width="700"/> | A class with a picasso implementation and set image logic.
+viewmodels | <img src="https://i.ibb.co/SyDv59V/image.png" width="700"/> | Contains the viewmodel classes needed to implement the mvvm pattern.
+res | <img src="https://i.ibb.co/h9FC0X8/2021-10-20-211102.png" width="700"/> | Contains markup and other resources necessary for displaying the view.
