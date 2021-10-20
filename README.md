@@ -24,3 +24,18 @@ response | <img src="https://i.ibb.co/CJWcWxW/image.png" width="700"/> | Contain
 utilities | <img src="https://i.ibb.co/RSkXfvz/image.png" width="700"/> | A class with a picasso implementation and set image logic.
 viewmodels | <img src="https://i.ibb.co/SyDv59V/image.png" width="700"/> | Contains the viewmodel classes needed to implement the mvvm pattern.
 res | <img src="https://i.ibb.co/h9FC0X8/2021-10-20-211102.png" width="700"/> | Contains markup and other resources necessary for displaying the view.
+
+## Questions that you may have
+
+### 1. How do you get the data?
+### I get the data using RickAndMortyApi https://rickandmortyapi.com. To get data from the Api, the application uses Retrofit and the following classes.
+
+<img src="https://i.ibb.co/6NFCXrL/image.png" width="200"/> <img src="https://i.ibb.co/wdj2bYY/image.png" width="200"/> <img src="https://i.ibb.co/HdLDXwD/image.png" width="200"/> <img src="https://i.ibb.co/CJWcWxW/image.png" width="200"/>
+
+### 2. What if I don't have an internet connection?
+### If the user does not have an Internet connection, the application will constantly try to download data until an Internet connection appears.
+ <img src="https://i.ibb.co/DV0z42f/1.png" width="200"/>
+ 
+ ### 3. How can I download your project and run it?
+ ### You can download the project from this repository, transfer the local.properties file to the folder of the downloaded repository and run it.
+ <img src="https://i.ibb.co/28w0L5R/2021-10-20-212655.png" width="600"/> 
