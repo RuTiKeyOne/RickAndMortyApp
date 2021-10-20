@@ -29,7 +29,7 @@ public class LocationsRepository extends Repository<LocationResponse> {
 
             @Override
             public void onFailure(@NotNull Call<LocationResponse> call,@NotNull Throwable t) {
-                throw new NullPointerException();
+                getDataByPage(page);
             }
         });
 

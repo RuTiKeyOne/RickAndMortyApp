@@ -30,7 +30,7 @@ public class EpisodesRepository extends Repository<EpisodeResponse> {
 
             @Override
             public void onFailure(@NotNull Call<EpisodeResponse> call,@NotNull Throwable t) {
-                throw new NullPointerException();
+                getDataByPage(page);
             }
         });
 

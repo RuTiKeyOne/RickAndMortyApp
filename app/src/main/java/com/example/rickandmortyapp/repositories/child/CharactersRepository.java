@@ -31,7 +31,7 @@ public class CharactersRepository extends Repository<CharacterResponse> {
 
             @Override
             public void onFailure(@NotNull Call<CharacterResponse> call, @NotNull Throwable t) {
-                throw new NullPointerException();
+                getDataByPage(page);
             }
         });
 
