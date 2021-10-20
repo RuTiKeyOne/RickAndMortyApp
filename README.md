@@ -13,5 +13,6 @@ Characters page             |  Locations page | Episodes page
 
 Name             | Image | Description
 :-------------------------:|:-------------------------:|:-------------------------:
-build.grable  |  <img src="https://i.ibb.co/t4JFcPs/image.png" width="400"/> | Contains all the libraries connected to the project and necessary for correct operation.
-activities | <img src="https://i.ibb.co/DKDnsT3/image.png" width="400"/> | Contains all the activity of the application (except fragment activities).
+build.grable  |  <img src="https://i.ibb.co/t4JFcPs/image.png" width="500"/> | Contains all the libraries connected to the project and necessary for correct operation.
+activities | <img src="https://i.ibb.co/VmrN56Q/image.png" width="500"/> | Contains all the activity of the application (except fragment activities). The activity class is an abstraction that other activities implement (for example, this is the main activity). changeTabItemListener is an interface required to create a sender-listener.
+adapters |      |     
