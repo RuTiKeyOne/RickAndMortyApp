@@ -79,8 +79,6 @@ public class BaseFragmentActivity<Data> extends Fragment implements ScrollListen
                 data.addAll(baseActivityCommand.getData(response));
                 adapter.notifyDataSetChanged();
                 LoadManager();
-            } else {
-
             }
         });
     }
