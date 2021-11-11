@@ -36,4 +36,4 @@ Before you begin, you should have already downloaded the Android Studio SDK and 
 
 ## Wiki
 
-View the [wiki]() to see pages that provide details on the project.
+View the [wiki](https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Wiki.md) to see pages that provide details on the project.
