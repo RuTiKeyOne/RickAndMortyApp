@@ -5,9 +5,9 @@ The Android application is a list of characters, locations and episodes of the a
 ## Screenshots
 
 <p align="center">
-<img src="https://i.ibb.co/SsG0hX5/1.png" width="250"/>
-<img src="https://i.ibb.co/2yxBpw7/2.png" width="250"/>
-<img src="https://i.ibb.co/8XLn8GL/3.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/1.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/2.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/3.png" width="250"/>
 </p>
 
 ## What functionality does the application provide to the user?
