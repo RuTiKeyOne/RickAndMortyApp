@@ -23,7 +23,7 @@ Before you begin, you should have already downloaded the Android Studio SDK and 
 
 ## Building the Code
 
-* `Clone the repository using HTTP: git clone https://github.com/RuTiKeyOne/RickAndMorty`;
+* `Clone the repository using HTTP: git clone https://github.com/rutikeyone/rick-and-morty`;
 * `Open Android Studio/Visual Studio Code`;
 * `Click on 'Open the project folder`;
 * `Browse to the directory where you cloned the mobile-wallet repo and click OK`;
