@@ -1,10 +1,11 @@
+![GitHub](https://img.shields.io/github/license/IgorVolochay/Face-recognition?style=flat-square&color=blue) &nbsp;
 # Rick and Morty mobile application for Android
 
 The Android application is a list of characters, locations and episodes of the animated series Rick and Morty written in Java using the mvvm template.
 
 ## Screenshots
 
-<p align="center">
+<p align="start">
 <img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/1.png" width="250"/>
 <img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/2.png" width="250"/>
 <img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/3.png" width="250"/>
